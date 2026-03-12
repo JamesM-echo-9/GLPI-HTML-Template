@@ -6,7 +6,7 @@
 
 // 1. DATABASE CREDENTIALS - Amend the password here
 $dbuser = 'glpi';
-$dbpass = '6bo1Jxj0KLKRpMG1kHqY1ubGcANa8i5'; // Wrap the ENTIRE password in single quotes
+$dbpass = 'put password here'; // Wrap the ENTIRE password in single quotes
 $dbname = 'glpi';
 
 // 2. ESTABLISH CONNECTION
