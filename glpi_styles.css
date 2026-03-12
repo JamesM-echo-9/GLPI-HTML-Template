@@ -1,6 +1,6 @@
-/* e-mail bugfixes */
+/* e-mail bugfixes for Outlook and older clients */
 #outlook a {
-    padding: 0 0 0 0;
+    padding: 0;
 }
 
 .ReadMsgBody {
@@ -12,15 +12,21 @@
     line-height: 100%;
 }
 
-sup,
-sub {
-    vertical-align: baseline;
-    position: relative;
-    top: -0.4em;
+/* Forces Outlook to provide a "view in browser" message */
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+    line-height: 100%;
 }
 
-sub {
-    top: 0.4em;
+/* Fix for line-height in Outlook */
+table,
+td {
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
 }
 
 /* General classes */
@@ -28,6 +34,7 @@ body {
     width: 100% !important;
     margin: 0;
     padding: 0;
+    background-color: #F8F8F8;
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: 100%;
 }
@@ -37,172 +44,98 @@ img {
     text-decoration: none;
     -ms-interpolation-mode: bicubic;
     border: none;
-}
-
-table td {
-    border-collapse: collapse;
+    display: block;
+    /* Fixes gap in Gmail/Outlook */
 }
 
 table {
     border-collapse: collapse;
-    mso-table-lspace: 0pt;
-    mso-table-rspace: 0pt;
 }
 
+/* Standardize Fonts for Outlook */
 body,
+table,
+td,
+p,
+a,
+li,
+blockquote {
+    font-family: Calibri, Helvetica, Arial, sans-serif !important;
+    mso-line-height-rule: exactly;
+}
+
 .bodytemplate {
     background-color: #F8F8F8;
-}
-
-.container {
-    width: 95%;
-    max-width: 900px;
-    height: auto;
-}
-
-.image_header,
-.text_header,
-.contenttable,
-.footer {
-    width: 100%;
-}
-
-.bodytemplate {
     padding-top: 24px;
     padding-bottom: 24px;
 }
 
-.bodytemplate,
-td {
-    font-family: Calibri, Arial, Verdana, sans-serif;
-    font-size: 15px;
-    color: #757575;
-}
-
-.bodytemplate .mpFormResult {
-    font-family: Calibri, Arial, Verdana, sans-serif;
-    font-size: 15px;
-    color: #757575;
-}
-
-.bodytemplate a,
-.bodytemplate a:hover {
-    color: #0055aa;
-    text-decoration: none;
-}
-
-.openhtml {
-    font-family: Calibri, Arial, Verdana, sans-serif;
-    color: #ffffff;
-    font-size: 14px;
-}
-
-.openhtml a,
-.openhtml a:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.image_header td {
-    padding-bottom: 24px;
-}
-
-.text_header {
-    width: 100% !important;
+/* Layout widths - Changed from 95% to 600px for Outlook stability */
+.container {
+    width: 600px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .header_bar {
-    font-family: Calibri, Arial, Verdana, sans-serif;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 24px;
     vertical-align: middle;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     background-color: #1d7363;
-    padding: 9px 0
-}
-
-.header_bar a span,
-.header_bar a:hover span {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 18px;
-    text-align: right;
+    padding: 10px 0;
 }
 
 #header_title {
     text-align: left;
     padding-left: 24px;
+    color: #FFFFFF !important;
 }
 
 #incident_nr {
     text-align: right;
     padding-right: 24px;
+    color: #FFFFFF !important;
 }
 
 .text_content {
-    font-family: Calibri, Arial, Verdana, sans-serif;
-    font-size: 15px;
-    vertical-align: top;
     background-color: #FFFFFF;
     padding: 24px;
     border: 1px solid #D7D7D7;
-    border-top-width: 0px;
 }
 
 .text_content h1 {
-    font-family: Calibri, Arial, Verdana, sans-serif;
-    font-size: 18px;
-    color: #000000;
-    font-weight: normal;
-}
-
-.action {
-    width: 100% !important;
+    font-size: 20px;
+    line-height: 26px;
+    color: #000000 !important;
+    margin: 0 0 15px 0;
 }
 
 .action td {
-    font-family: Calibri, Arial, Verdana, sans-serif;
-    font-size: 15px;
-    vertical-align: top;
     background-color: #F8F8F8;
-    padding: 12px;
+    padding: 15px;
     border: 1px solid #D7D7D7;
+    color: #757575;
 }
 
-.action td.spacing {
-    width: 24px;
-    border: none;
-    padding: 0;
-    background: transparent;
-}
-
-.footer td {
-    font-family: Calibri, Arial, Verdana, sans-serif;
-    font-size: 15px;
-    line-height: 23px;
-    padding-top: 24px;
+/* Footer Link styling */
+.footer_link {
+    color: #0055aa !important;
+    text-decoration: underline !important;
 }
 
 @media only screen and (max-width: 600px) {
     .container {
-        max-width: 600px !important;
         width: 100% !important;
+        max-width: 100% !important;
     }
 
-    .bodytemplate {
-        padding-top: 0 !important;
+    .text_content {
+        padding: 15px !important;
     }
 
-    .image_header td {
-        padding-top: 24px;
-    }
-
-    .action td.spacing {
-        width: 0 !important;
-        display: none !important;
-    }
-
-    .footer a {
+    /* Stack tables on mobile if needed */
+    .mobile_stack {
         display: block !important;
         width: 100% !important;
     }
