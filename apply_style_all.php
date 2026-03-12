@@ -15,7 +15,6 @@ $db = new mysqli('127.0.0.1', $dbuser, $dbpass, $dbname);
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error . "\n");
 }
-
 // 3. LOAD YOUR ASSETS
 $style_file = 'glpi_styles.css';
 $html_file = 'glpi_template.html';
