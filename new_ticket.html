@@ -1,0 +1,55 @@
+<table class="bodytemplate" border="0" width="100%" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td align="center">
+                <table class="container" border="0" width="600" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td style="padding-bottom: 20px;" align="center"> </td>
+                        </tr>
+                        <tr>
+                            <td class="header_bar">
+                                <table border="0" width="100%" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td id="header_title" align="left"> Echo-9 Support</td>
+                                            <td id="incident_nr" align="right">##ticket.id##</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text_content">
+                                <h1>Hello ##ticket.authors##,</h1>
+                                <p>Thank you for contacting Echo-9 Support. A new ticket has been created with the
+                                    following details.</p>
+                                <p><strong style="color: #1d7363;">Description:</strong></p>
+                                <p>##ticket.content##</p>
+                                <table class="action" style="margin-bottom: 20px;" border="0" width="100%"
+                                    cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Status:</strong> ##ticket.status##<br><strong>Category:</strong>
+                                                ##ticket.category##<br><strong>Assigned To:</strong>
+                                                ##ticket.assigntousers##<br><strong>Created On:</strong>
+                                                ##ticket.creationdate##</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br>
+                                <p style="margin-top: 30px;">Kind regards,<br><strong>Echo-9 Support Team</strong></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="footer"
+                                style="padding: 20px; font-size: 12px; text-align: center; color: #999999;"><a
+                                    class="footer_link" href="##ticket.url##">Click here to view this ticket in the
+                                    Service Portal</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
